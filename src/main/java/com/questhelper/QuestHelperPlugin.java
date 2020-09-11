@@ -156,6 +156,14 @@ public class QuestHelperPlugin extends Plugin
 			.panel(panel)
 			.build();
 
+		for (QuestHelperQuest value : QuestHelperQuest.values())
+		{
+			if (quests.get(value.getName()) ==  null)
+			{
+				System.out.println(value.getName());
+			}
+		}
+
 		clientToolbar.addNavigation(navButton);
 	}
 
@@ -274,7 +282,6 @@ public class QuestHelperPlugin extends Plugin
 					{
 						if (questHelperBlackArm.getVar() < 3)
 						{
-							// TODO: Change Var to actual var
 							menuEntries = addNewEntry(menuEntries, MENUOP_PHOENIXGANG, event.getTarget(), widgetIndex, widgetID);
 						}
 						if (questHelperPhoenix.getVar() < 6)
